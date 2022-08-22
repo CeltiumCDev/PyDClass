@@ -8,7 +8,7 @@ It's verry simple! You can run:
 ```bash
 pip install git+https://github.com/CeltiumCDev/PyDClass
 ```
-**⚠️ Warning! If you have not got git installed, you can install it or use this command: **
+** ⚠️ Warning! If you have not got git installed, you can install it or use this command: **
 ```bash
 pip install pydclass # Not supported. Comming soon :)
 ```
@@ -28,7 +28,8 @@ A web server will be started on the port "8080", you can go here!
 * **Why inherited attributes appear and not inherited methods?** Why not? No I'm kidding! We are in the process of fixing this.
 * **Is there Windows or Mac support?** Yes for Mac, not for Windows.
 * **Is the program compatible with Python2?** Maybe, but it's not designed for that.
-Post your questions on Discord (**Comming soon... **)
+
+Post your questions on Discord ( **Comming soon... ** )
 
 Thanks you for reading!
 
