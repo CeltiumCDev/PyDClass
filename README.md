@@ -1,2 +1,44 @@
 # PyDClass
-PyDClass - The new Python class diagram generator
+###  PyDClass is a simple Python class diagram generator.
+
+PyDClass generate a simple svg image and start a web server for host this image.
+
+### How to install?
+It's verry simple! You can run:
+```bash
+pip install git+https://github.com/CeltiumCDev/PyDClass
+```
+**⚠️ Warning! If you have not got git installed, you can install it or use this command: **
+```bash
+pip install pydclass
+```
+-> Using this syntax is certainly easier but is not recommended if you can do the same thing with this one above because we update GitHub more often than PyPi.
+
+### How to use?
+It's also verry simple!
+
+You must go into your project directory and run
+```bash
+pydclass <you module>
+```
+A web server will be started on the port "8080", you can go here!
+
+### Web GUI
+Look! It's PyDClass!
+![Web GUI](https://lh3.googleusercontent.com/fife/AAbDypA4U-M2RLjLEaTw9cCbRFpNp59cAG7AafAsRAtJbFis4a1LVdzsxVOt82bK7z641cpfqCmzmc5RHCMRt7_-aTqDtpKPWu8NV9LyXW7di1UnvAUrLD-4nyzTlBSsqN3g0qe-un_X_8mF1x1UHQr7n5OrjXPuSW1cts37DeCmaKpDfkQDyf3f4-Q7Oi6x9FoDARjne403UJqubetCFMQ58cGlDIYZJRbzxk7Sf04-WexSuphjuay8Ue5kv5-9FP6587UtIbukzB2mbUUpalPztNEgRrRhy-H6Ho_5ytLSZJmXmMRoFp6KLnjdaA4fmL7mFAIHHnF_tVcsal-SOVoJpTlhHd4ROU9MTGoP_l3tgUndWUxn8V15GO74i3pJRKeJjYAxcBFNTtLRk3jFcjJhz2-fsc4sLsvDHpZ66_I-sar4DQrh4IkVONKhaFjesfk2j9G1u2BLXPPZv21dsku834M01q65jEKeU-Hw8fn1PfBF_00bNG_LTa6d0VntBSX_YowOMxbjOMDcwDt_r6UOzDc7tuTaHCirkJ3vch11BgJ7OvYaTczCqyuZwghsHO2t75NvxoiGVlM8ZnkIn6QR4g7bx7JGBbgt9w5SvnkeTjySyZyVIGHxyYEKNylK0xQKB14gGjyWKOjxmNF1RVX2x12Yn3QNCr7--C1TyCH64Np9ebRvttEL07a1D7lRTwgi-VuTbiXdQVWrjdKdQGCshM9eMdlogCxm4fjJ5cNM-MEaCkrsV61oqIS_fKtoU8aXRR8C4IxNkrkV1k55-g6p-Y-N2sac73cBmlnu_fZXwGPFHR6nCjZZYszkEhnT4wPdIzlkaSFrRTp5ai5ugXpNNuQd8I6TiWn5f4ylpSNWFMyxpQ_5AD7effPU1lrmjX5oc5jgs39ReG0uxVWYa_Koc0gpNE9Ik5ARb0MFpmmn8ajDmAhr34EEyTF8Z4_nPKGjGYEB0LSHxSJ8gFgKEs_X09vEiXYiI6zvfgkV7li5kP0xVjsiB8sZZPjI0LSajwI9a8wGNOItgZRia6HEOWWimJr8LQEyCOyGZJl9E2Z4vGvNYiS4olLzVB54xJiIUUyoBly4xIqywqdt0A4BkPh9T_3WdybgVDQYcWiRdF9kHyh8mszJbPSfY4A3ibwZM5F9vzlbrt2PWKsxnVe43jyhMeSw9OKCm1PpAe8ggkKzoR8N498ABMtD6_wefgs3aWkcvFNJ8HH0WEDG9CXzd1hav_-IU5Au0o5FDvOGG53Sf6ijb6ScBQ7_SExnh2ZGXJAjsc9PMPgiWzWbTShNfnFCIymFKabzR0AKvwOV0lgPYzmgdWAKDNmR9Y4zalB5uqepvt9Tm2XOmUA=w1920-h926)
+The image
+
+![Code for the web GUI](https://lh3.googleusercontent.com/fife/AAbDypBJBfnO16-iIt-D4Ghkv3Re6oTPAmR8taZBPwuCUvRbOgdfAtiEY6ROZ0DEmMPPyVSvA7LxQ7GzPT1Tg68dp7LlXFuSxb9mo9_cNBXwzKX2-86X1ZjKwRFKpc9m7i5G06tRQ0ZG7D24gv0r1_DBROOZ4VCkezZ-8RAF23ngzq9h7pSPCSpH_BnkficIGdk3UNCLu8NKlGO8KjV02QcSzNClXpyjwLvqYqFYao8uEmi4mnVPDoM_O4aJOKwgoDEk6jFTterSx76FUkplp-CYxBqD1UG7uoXqvNM3tT_YwTSiJcVFP5YsOli2b_8eiKkYk3-xWLZ8NFNqaTJrcz7eJ6B2zV5T5yVd7ZI9Rwfj33UyK2l2FpM0oRf6TAZrifSZdcxhF9qSSmLUjLXg464C3PHDCsOKCkJrschZ7jwwM14gqeSVwpGRxpXG1Nkzsyu7530iysSR4TQhU3hwcZQwqCa6LC3T6ZAFd2z-DucVYXUjRcxPTfdxvNDKG7ssqe_82DK7kh64QLFWg3z0ZiQ_V9qOzIvS9z3Q5GsBFaQH4L_DgmhmJY7SAdVCqEHsKQy_joqvREoz-36QpJAbwa6eWfOWxGTZj5LGJsqhtdlMeWY86jB-dl0zK2DdvICEyw4gehqxbGEo8xTlFgcGot_Bc5N7naiQkFFObYbEx2FW1juz28Q5GDKY77xybskqJOZLGYtL66e-21nuX4NNfDMmKUWE1IYRxqmYQ1qrutgPXQebWs4aSkSNcvNbadIRu5rrACqe9wMLgTMIIm4BvIOpfuJ-3vpOK4DWGZeBnKOfFJuifd37QA2axYU69tnjMnTmgc2hAYqO4LDbULbrkEv_kLN1G7gBe2fIuEboBenuM6bIYLXE0W277qE3qGmzzeAHMKuPJQXc-UJ4gfrjTPOP_VoHtTUojc-PKI0MfZFQYpUM7vxiD3_LP93GOZdqY_rFicDZ3v3BIkEXc-KzzFpSnEDJv2oNAnErf8scoT1E71afozXo5k9EmOilKv0oQN0pDbqDdZBZ82SKqa85O2kfjiZrgVPFfS-JNlOB-8IXDJoMWej3IiPareNZ6hcrlYv9p4JPw6e1hKDEpsvVE8xeDe5xuyAL7DG54Rmnumz0BCYsBQikjHID1VOt_P9XdLDnQulEzG9SXKiegoP5x0g7oONBSmYUscr1zMvTNNxvydKkST2sHshfe-xnslpwpGo1aoZO3nM1p7Ov3YrMeI4ffRyIBpFMgl0c-rAa1zA_NiQNWHYGMTSYxgbRwclNMqn9nfKQeeHS6M8p0GT4yhfX0aKbjPdgpiKnCA8zsB6rQyz0ligzCExrPonwrwF4oFO8CovFy5BF_uw=w1920-h599)
+The code
+
+## FAQ
+
+* **Why inherited attributes appear and not inherited methods?** Why not? No I'm kidding! We are in the process of fixing this.
+* **Is there Windows or Mac support?** Yes for Mac, not for Windows.
+* **Is the program compatible with Python2?** Maybe, but it's not designed for that.
+Post your questions on Discord (**Comming soon... **)
+
+Thanks you for reading!
+
+
+
