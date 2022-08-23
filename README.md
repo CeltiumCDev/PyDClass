@@ -10,7 +10,7 @@ pip install git+https://github.com/CeltiumCDev/PyDClass
 ```
  ** ⚠️ Warning! If you have not got git installed, you can install it or use this command: **
 ```bash
-pip install pydclass # Not supported. Comming soon :)
+pip install pydclass
 ```
 -> Using this syntax is certainly easier but is not recommended if you can do the same thing with this one above because we update GitHub more often than PyPi.
 
