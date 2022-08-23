@@ -1,4 +1,4 @@
-# Imports
+# Imports
 import graphviz
 import importlib
 import inspect
@@ -6,6 +6,9 @@ import pydclass.class_library as library
 import os
 
 def render(format, module):
+    file_path = os.path.realpath(__file__)
+    module = importlib.import_module(module, package=file_path)
+    print(module)
 
     dot = graphviz.Digraph('structs', filename='structs_revisited.gv',
                      node_attr={'shape': 'record'})
@@ -60,7 +63,7 @@ def render(format, module):
             meth.append(meth_template.format(meth=m.__name__))
         meth = "".join(meth)
         for a in c['attributes']:
- 
+
             attrib.append(attr_template.format(attr=a))
         attrib = "".join(attrib)
 
@@ -78,4 +81,4 @@ def get_svg_datas(module, format):
     render(format, module)
     render_datas = open(os.path.dirname(os.path.realpath(__file__))+'/graph.svg', 'r').read()
     print(render_datas)
-    return render_datas
+    return render_datas 
