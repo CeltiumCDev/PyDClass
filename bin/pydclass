@@ -12,7 +12,6 @@ import sys
 
 print('Welcome to PyDClass!')
 
-
 sys.path.insert(0, os.path.abspath('./'))
 
 parser = argparse.ArgumentParser()
@@ -26,9 +25,7 @@ site_package = result.decode()
 
 local_directory = os.path.realpath(__file__)
 
-template_dir = os.path.abspath('../lib/python3.8/site-packages/pydclass/templates/')
-print(template_dir)
-app = Flask(__name__, template_folder=template_dir+"/")
+app = Flask(__name__)
 
 
 print(os.path.abspath(importlib.import_module(args.module).__file__))
