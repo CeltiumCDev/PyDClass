@@ -19,7 +19,7 @@ It's also verry simple!
 
 You must go into your project directory and run
 ```bash
-pydclass <you module>
+pydclass # The application will be load every python file into the directory and show every class in there.
 ```
 A web server will be started on the port "8080", you can go here!
 
