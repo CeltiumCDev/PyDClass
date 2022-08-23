@@ -1,0 +1,13 @@
+Metadata-Version: 1.2
+Name: PyDClass
+Version: 0.1
+Summary: PyDClass is a simple web class diagram generator
+Home-page: https://github.com/CeltiumCDev/PyDClass
+Author: VitriSnake
+Author-email: vitrisnake@celtiumc.fr
+Maintainer: CeltiumC
+Maintainer-email: contact@celtiumc.fr
+License: GPLv3.0
+Description: UNKNOWN
+Keywords: diagram class project python generator web svg
+Platform: UNKNOWN

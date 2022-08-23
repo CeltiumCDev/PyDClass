@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import importlib
+import os
+import subprocess
+import pydclass.gen_img
+import pydclass.get_template as template
+from flask import *
+import argparse
+import sys
+
+print('Welcome to PyDClass!')
+
+
+sys.path.insert(0, os.path.abspath('./'))
+
+parser = argparse.ArgumentParser()
+parser.add_argument("module", help="Choose the module that will be analyzed",
+                    type=str)
+
+args = parser.parse_args()
+
+result = subprocess.check_output(['python3',  '-m',  'site',  '--user-site'])
+site_package = result.decode()
+
+local_directory = os.path.realpath(__file__)
+
+template_dir = os.path.abspath('../lib/python3.8/site-packages/pydclass/templates/')
+print(template_dir)
+app = Flask(__name__, template_folder=template_dir+"/")
+
+
+print(os.path.abspath(importlib.import_module(args.module).__file__))
+
+@app.route('/d/class')
+def return_main_page():
+    
+    return template.INDEX.replace('{{module}}', args.module).replace('{{svg}}', pydclass.gen_img.get_svg_datas(args.module, 'svg'))
+
+@app.route('/module/change')
+def change_module():
+    return template.CHANGEMODULE.replace('{{module}}', args.module)
+
+@app.route('/module/form', methods=['GET'])
+def get_method():
+    module = request.args.get('module')
+    args.module = module
+    print(module)
+    return redirect('/')
+
+@app.route('/')
+def index():
+    return redirect('/d/class')
+
+if __name__ == "__main__":
+    app.run(port=8080, host="0.0.0.0")
+    
+
+
