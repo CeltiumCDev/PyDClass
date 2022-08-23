@@ -12,6 +12,7 @@ bin/pydclass
 pydclass/__init__.py
 pydclass/class_library.py
 pydclass/gen_img.py
+pydclass/get_template.py
 pydclass/server.py
 pydclass/static/c_icon.png
 pydclass/static/favicon.png

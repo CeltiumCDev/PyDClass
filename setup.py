@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import shutil
 
 setup(name = 'PyDClass',
-      version = 0.1,
+      version = 0.2,
       author = 'VitriSnake',
       author_email = 'vitrisnake@celtiumc.fr',
       maintainer = 'CeltiumC',

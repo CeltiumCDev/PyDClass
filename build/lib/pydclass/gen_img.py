@@ -6,6 +6,7 @@ import pydclass.class_library as library
 import os
 
 def render(format, module):
+    file_path = os.path.realpath(__file__)
 
     dot = graphviz.Digraph('structs', filename='structs_revisited.gv',
                      node_attr={'shape': 'record'})
@@ -22,7 +23,16 @@ def render(format, module):
     meth_template = "<TR><TD> Meth: {meth}</TD></TR>"
     attr_template = "<TR><TD>Attr: {attr}</TD></TR>"
 
-    members = inspect.getmembers(module)
+    file_list = os.listdir(file_path)
+    file_modules = []
+    for f in file_list:
+        if f.split('.')['-1'] == "py":
+            file_modules.append(f)
+
+    members = []
+
+    for modules in file_modules:
+        members += inspect.getmembers(modules)
 
     class_list = []
     for m in members:
