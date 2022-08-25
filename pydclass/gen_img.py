@@ -15,7 +15,8 @@ def render(format):
 
         template_node = """<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
         <TR>
-        <TD fontcolor=\"red\"><font color=\"red\" style=\"Arial\">{title}</font></TD></TR>
+        <TD ALIGN="CENTER" CELLPADDING="4" CELLSPACING="5" BGCOLOR="blue" COLSPAN="3"><font color=\"white\">{title}</font></TD></TR>
+        <TR><TD>    </TD></TR>
         {meth_list}
         {attr_list}
   
@@ -29,13 +30,13 @@ def render(format):
             print('[!] No configuration file found; Using the default configuration.')
             config = {"attributs_color": "blue", "methods_color": "orange", 'text_color': 'white'}
         try:
-            meth_template = "<TR><TD BGCOLOR='"+config['methods_color']+"'><font color='"+config['text_color']+"'>Methods: </font></TD><TD>   {meth}</TD></TR>"
-            attr_template = "<TR><TD BGCOLOR='"+config['attributs_color']+"'><font color='"+config['text_color']+"'>Attributes: </font></TD><TD>   {attr}</TD></TR>"
+            meth_template = "<TR><TD BGCOLOR='"+config['methods_color']+"' CELLPADDING='5'><font color='"+config['text_color']+"'>Methods: </font></TD><TD>   {meth}</TD></TR>"
+            attr_template = "<TR><TD BGCOLOR='"+config['attributs_color']+"' CELLPADDING='5'><font color='"+config['text_color']+"'>Attributes: </font></TD><TD>   {attr}</TD></TR>"
         except KeyError:
-            print('[!] The program cannot read the README.md file; There is some information missing. Automatic switch to default configuration.')
+            print('[!] The program cannot read the pydclass-config.yaml file; There is some information missing. Automatic switch to default configuration.')
             config = {"attributs_color": "blue", "methods_color": "orange", 'text_color': 'white'}
-            meth_template = "<TR><TD BGCOLOR='"+config['methods_color']+"'><font color='"+config['text_color']+"'>Methods: </font></TD><TD>   {meth}</TD></TR>"
-            attr_template = "<TR><TD BGCOLOR='"+config['attributs_color']+"'><font color='"+config['text_color']+"'>Attributes: </font></TD><TD>   {attr}</TD></TR>"
+            meth_template = "<TR><TD BGCOLOR='"+config['methods_color']+"' CELLPADDING='5'><font color='"+config['text_color']+"'>Methods: </font></TD><TD>   {meth}</TD></TR>"
+            attr_template = "<TR><TD BGCOLOR='"+config['attributs_color']+"' CELLPADDING='5'><font color='"+config['text_color']+"'>Attributes: </font></TD><TD>   {attr}</TD></TR>"
         module_list = []
         for f in file_list:
             if f.split('.')[-1] == "py":
@@ -64,7 +65,7 @@ def render(format):
             attr_list = ci.class_atributes(meth)
             parents_list = ci.class_parents()
 
-            dictionary = {"name": c.__name__, "methods": meth_list, "attributes": attr_list, "parents": parents_list}
+            dictionary = {"class": c, "name": c.__name__, "methods": meth_list, "attributes": attr_list, "parents": parents_list}
             attributes_h_list += ci.get_attributes_list()
             methods_h_list += ci.get_methods_list()
             final_dict.append(dictionary)
@@ -84,12 +85,11 @@ def render(format):
 
                 attrib.append(attr_template.format(attr=a))
             attrib = "".join(attrib)
-
-            dot.node(c['name'], label=template_node.format(title=c['name'], meth_list=meth, attr_list=attrib))
+            dot.node(str(c['class']), label=template_node.format(title=inspect.getmodule(c['class']).__name__+" - "+c['name'], meth_list=meth, attr_list=attrib), fontname="Courier New", fontsize="10px")
 
         for c in final_dict:
             for p in c['parents']:
-                dot.edge(p.__name__, c['name'], color="blue")
+                dot.edge(str(p), str(c['class']), color="blue")
 
 
 

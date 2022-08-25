@@ -83,9 +83,6 @@ if __name__ == "__main__":
     final_dict = []
     meth = []
 
-    print(class_list)
-    print(inspcet.getmembers)
-
     for c in class_list:
         ci = class_infos(c, test1, methods_h_list, attributes_h_list)
         meth_list = ci.class_methods()
