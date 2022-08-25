@@ -1,11 +1,11 @@
-# Imports
+# Imports
 import graphviz
 import importlib
 import inspect
 import pydclass.class_library as library
 import os
 
-def render(format, module):
+def render(format):
     file_path = os.path.realpath(__file__)
 
     dot = graphviz.Digraph('structs', filename='structs_revisited.gv',
@@ -23,16 +23,17 @@ def render(format, module):
     meth_template = "<TR><TD> Meth: {meth}</TD></TR>"
     attr_template = "<TR><TD>Attr: {attr}</TD></TR>"
 
-    file_list = os.listdir(file_path)
-    file_modules = []
+    file_list = os.listdir('.')
+    module_list = []
     for f in file_list:
-        if f.split('.')['-1'] == "py":
-            file_modules.append(f)
+        if f.split('.')[-1] == "py":
+            print('... ok')
+            module_list.append(f.split('.')[0])
 
     members = []
 
-    for modules in file_modules:
-        members += inspect.getmembers(modules)
+    for m in module_list:
+        members += inspect.getmembers(importlib.import_module(m))
 
     class_list = []
     for m in members:
@@ -45,7 +46,7 @@ def render(format, module):
     meth = []
 
     for c in class_list:
-        ci = library.class_infos(c, module, methods_h_list, attributes_h_list)
+        ci = library.class_infos(c, importlib.import_module(module_list[0]), methods_h_list, attributes_h_list)
         meth_list = ci.class_methods()
         for m in meth_list:
             meth.append(m.__name__)
@@ -70,7 +71,7 @@ def render(format, module):
             meth.append(meth_template.format(meth=m.__name__))
         meth = "".join(meth)
         for a in c['attributes']:
- 
+
             attrib.append(attr_template.format(attr=a))
         attrib = "".join(attrib)
 
@@ -84,8 +85,8 @@ def render(format, module):
 
     dot.render(os.path.dirname(os.path.realpath(__file__))+"/graph", format=format).replace('\\', '/')
 
-def get_svg_datas(module, format):
-    render(format, module)
+def get_svg_datas(format):
+    render(format)
     render_datas = open(os.path.dirname(os.path.realpath(__file__))+'/graph.svg', 'r').read()
     print(render_datas)
-    return render_datas
+    return render_datas 
