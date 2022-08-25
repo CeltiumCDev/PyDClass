@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 import importlib
@@ -44,8 +44,24 @@ def get_method():
 def index():
     return redirect('/d/class')
 
+@app.errorhandler(404)
+def error_404(e):
+    return template.ERROR_404
+
+@app.errorhandler(500)
+def error_500(e):
+    return template.ERROR_500
+
+@app.route("/404")
+def error_404_route():
+    return template.ERROR_404
+
+@app.route('/500')
+def error_500_route():
+    return template.ERROR_500
+
 if __name__ == "__main__":
-    app.run(port=args.port, host="0.0.0.0")
+    app.run(port=args.port, host="0.0.0.0", debug=True)
     
 
 
