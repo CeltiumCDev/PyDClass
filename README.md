@@ -23,7 +23,7 @@ pydclass # The application will be load every python file into the directory and
 ```
 A web server will be started on the port "8080", you can go here!
 
-## FAQ
+## Questions
 
 * **Why inherited attributes appear and not inherited methods?** Why not? No I'm kidding! We are in the process of fixing this.
 * **Is there Windows or Mac support?** Yes for Mac, not for Windows.
