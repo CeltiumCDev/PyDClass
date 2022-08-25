@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import shutil
 
 setup(name = 'PyDClass',
-      version = 0.5,
+      version = 1.5,
       author = 'VitriSnake',
       author_email = 'vitrisnake@celtiumc.fr',
       maintainer = 'CeltiumC',
@@ -17,10 +17,12 @@ setup(name = 'PyDClass',
       ],
       zip_safe=False,
       url='https://github.com/CeltiumCDev/PyDClass',
-      keywords='diagram class project python generator web svg',
+      keywords='diagram class project python generator web svg directory module',
       install_requires=[
           'flask',
           'graphviz',
           'ipdb'
       ],
+      long_description=open('README.md', 'r').read(),
+      long_description_content_type='text/markdown'
      )

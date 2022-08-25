@@ -15,7 +15,8 @@ print('Welcome to PyDClass!')
 sys.path.insert(0, os.path.abspath('./'))
 
 parser = argparse.ArgumentParser()
-
+parser.add_argument("port", help="Choice the port for the server.",
+                    type=int, default=8080, nargs='?', const=8080)
 args = parser.parse_args()
 
 local_directory = os.path.realpath(__file__)
@@ -44,7 +45,7 @@ def index():
     return redirect('/d/class')
 
 if __name__ == "__main__":
-    app.run(port=8080, host="0.0.0.0")
+    app.run(port=args.port, host="0.0.0.0")
     
 
 

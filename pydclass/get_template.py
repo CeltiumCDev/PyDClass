@@ -74,6 +74,9 @@ h2 {
     font-size: 15px;
     margin-left: 20px;
 }
+TR {
+    margin: 100px;
+}
         </style>
 
         
