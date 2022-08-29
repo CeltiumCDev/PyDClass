@@ -43,7 +43,7 @@ class class_infos:
         for member in class_members:
             if not(member[0] in methods_list):
                 if not(member[0].startswith('__')) and not(member[0] in self.methods_list):
-                    class_attributes_list.append(member[0])
+                    class_attributes_list.append({"name": member[0], "value": member[1]})
                     self.attributes_list.append(member[0])
 
         return class_attributes_list

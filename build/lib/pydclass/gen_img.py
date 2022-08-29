@@ -82,8 +82,8 @@ def render(format):
                 meth.append(meth_template.format(meth=m.__name__))
             meth = "".join(meth)
             for a in c['attributes']:
+                attrib.append(attr_template.format(attr=a['name'] + " ("+type(a['value']).__name__+")"))
 
-                attrib.append(attr_template.format(attr=a))
             attrib = "".join(attrib)
             dot.node(str(c['class']), label=template_node.format(title=inspect.getmodule(c['class']).__name__+" - "+c['name'], meth_list=meth, attr_list=attrib), fontname="Courier New", fontsize="10px")
 
