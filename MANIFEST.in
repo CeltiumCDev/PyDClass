@@ -1,2 +1,0 @@
-recursive-include pydclass/static *
-recursive-include pydclass/templates *
