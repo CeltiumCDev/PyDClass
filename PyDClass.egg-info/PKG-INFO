@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: PyDClass
-Version: 2.0
+Version: 2.5
 Summary: PyDClass is a simple web class diagram generator
 Home-page: https://github.com/CeltiumCDev/PyDClass
 Author: VitriSnake
@@ -12,6 +12,17 @@ Description: # PyDClass
         ###  PyDClass is a simple Python class diagram generator.
         
         PyDClass generate a simple svg image and start a web server for host this image.
+        
+        ### Versions
+        * Version 1.0: Fix bugs
+                       Add multi-file reading
+                       New web interface
+        * Version 2.0: Add colors
+                       Add configuration file (for colors)
+                       Fix multi-file reading bug (Error with multi-class)
+                       Fix download bugs
+                       Graphics update
+        
         
         ### How to install?
         It's verry simple! You can run:
@@ -33,7 +44,7 @@ Description: # PyDClass
         ```
         A web server will be started on the port "8080", you can go here!
         
-        ## FAQ
+        ## Questions
         
         * **Why inherited attributes appear and not inherited methods?** Why not? No I'm kidding! We are in the process of fixing this.
         * **Is there Windows or Mac support?** Yes for Mac, not for Windows.

@@ -1,1 +1,4 @@
-# Hello boy (and girl :) )
+"""
+Welcome to PyDClass
+No, there isn't an easter egg :(
+"""
