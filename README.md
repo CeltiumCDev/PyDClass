@@ -3,6 +3,17 @@
 
 PyDClass generate a simple svg image and start a web server for host this image.
 
+### Versions
+* Version 1.0: Fix bugs
+               Add multi-file reading
+               New web interface
+* Version 2.0: Add colors
+               Add configuration file (for colors)
+               Fix multi-file reading bug (Error with multi-class)
+               Fix download bugs
+               Graphics update
+
+
 ### How to install?
 It's verry simple! You can run:
 ```bash
