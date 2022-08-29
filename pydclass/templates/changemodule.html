@@ -1,0 +1,28 @@
+<html lang="en">
+    <head>
+        <title>Change module - PyDClass</title>
+        <meta charset="utf-8"/>
+        <style>
+            body {
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input {
+                border: 0;
+                padding: 5px;
+            }
+            form {
+                border: 1px solid black;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Change module</h2>
+        <p style="color: red"><b>Warning! </b>The module must be into the server's directory.</p>
+        <form method="GET" action="/module/form">
+            <input type="text" name="module" value="{{module}}" required="required"/>
+            <input type="submit"></input>
+        </form>
+    </body>
+</html>

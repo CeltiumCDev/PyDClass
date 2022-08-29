@@ -1,0 +1,67 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+import importlib
+import os
+import subprocess
+import pydclass.gen_img
+import pydclass.get_template as template
+from flask import *
+import argparse
+import sys
+
+print('Welcome to PyDClass!')
+
+sys.path.insert(0, os.path.abspath('./'))
+
+parser = argparse.ArgumentParser()
+parser.add_argument("port", help="Choice the port for the server.",
+                    type=int, default=8080, nargs='?', const=8080)
+args = parser.parse_args()
+
+local_directory = os.path.realpath(__file__)
+
+app = Flask(__name__)
+
+
+@app.route('/d/class')
+def return_main_page():
+    
+    return template.INDEX.replace('{{module}}', os.path.abspath('./')).replace('{{svg}}', pydclass.gen_img.get_svg_datas(format='svg'))
+
+@app.route('/module/change')
+def change_module():
+    return template.CHANGEMODULE.replace('{{module}}', os.path.abspath('./'))
+
+@app.route('/module/form', methods=['GET'])
+def get_method():
+    module = request.args.get('module')
+    args.module = module
+    print(module)
+    return redirect('/')
+
+@app.route('/')
+def index():
+    return redirect('/d/class')
+
+@app.errorhandler(404)
+def error_404(e):
+    return template.ERROR_404
+
+@app.errorhandler(500)
+def error_500(e):
+    return template.ERROR_500
+
+@app.route("/404")
+def error_404_route():
+    return template.ERROR_404
+
+@app.route('/500')
+def error_500_route():
+    return template.ERROR_500
+
+if __name__ == "__main__":
+    app.run(port=args.port, host="0.0.0.0", debug=True)
+    
+
+
