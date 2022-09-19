@@ -21,7 +21,8 @@ setup(name = 'PyDClass',
       install_requires=[
           'flask',
           'graphviz',
-          'ipdb'
+          'ipdb',
+          'pyyaml'
       ],
       long_description=open('README.md', 'r').read(),
       long_description_content_type='text/markdown'
